@@ -4,7 +4,6 @@ use std::fs;
 use commands::Command;
 use std::{process, thread, time};
 use std::io::{self, stdout, Write};
-use rand::Rng;
 
 const BACKSPACE: char = 8u8 as char;
 
@@ -43,11 +42,8 @@ fn parse(commands: Vec<Command>) {
                         .expect("ls command failed to start");
                 }
             },
-            Command::Wait {msec, rand} => {
-                let range = rand as i32;
-                let num = rand::thread_rng().gen_range(-range..range);
-                let wait = ((msec as i32) + num).abs() as u32;
-                thread::sleep(time::Duration::from_millis((wait).into()));
+            Command::Wait {msec} => {
+                thread::sleep(time::Duration::from_millis(msec.into()));
             },
             Command::Pause => {
                 let mut answer = String::new();
