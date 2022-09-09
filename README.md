@@ -5,6 +5,7 @@ Cli tool for screen typing pre defined scripts.
 Example screenplay file:
 
 ```yaml
+- !clear
 - !write {msec: 0, color: green, text:  "$ "}
 - !write {msec: 20, text:    "i am going to list this dir"}
 - !wait {msec: 1000}
@@ -15,7 +16,7 @@ Example screenplay file:
 - !execute {line: ls -la}
 - !wait {msec: 3000}
 - !write {msec: 1000, color: green, text:  "$ "}
-- !write {msec: 20, text: bye}
+- !write {msec: 20, text: "bye, press any key..."}
 - !pause
 ```
 

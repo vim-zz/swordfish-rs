@@ -10,7 +10,6 @@ use clap::{Parser};
 
 const BACKSPACE: char = 8u8 as char;
 
-
 #[derive(Parser)]
 #[clap(author, version, about, long_about = None)]
 struct Cli {
@@ -64,6 +63,9 @@ fn parse(commands: Vec<Command>) {
                 io::stdin().read_line(&mut answer)
                   .ok()
                   .expect("Failed to read line");
+            },
+            Command::Clear => {
+                print!("\x1B[2J\x1B[1;1H");
             },
         }
     }

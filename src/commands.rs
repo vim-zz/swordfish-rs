@@ -7,6 +7,7 @@ pub enum Command<'a> {
     Erase {msec: u32, by_chars: &'a str},
     Execute {line: &'a str},
     Wait {msec: u32},
+    Clear,
     Pause,
 }
 
