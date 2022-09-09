@@ -1,4 +1,4 @@
-# Swordfish 
+# swordfish-rs 
 
 Cli tool for typing effect in Termainl for screencasts.
 
@@ -38,7 +38,7 @@ cargo install swordfish-rs
 Create a screenplay file and run swordfish:
 
 ```sh
-swordfish-rs path/to/file.yaml
+swordfish path/to/file.yaml
 ```
 
 ### Commands
