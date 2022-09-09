@@ -1,21 +1,24 @@
 [package]
 name = "swordfish-rs"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 license-file = "LICENSE"
 description = "Cli tool for screen typing pre defined scripts"
 readme = "README.md"
-repository = "https://github.com/vim-zz/swordfish/"
-exclude = [
-    "tests/*",
-]
+repository = "https://github.com/vim-zz/swordfish/
+
+[lib]
+name = "swordfishlib"
+path = "src/lib.rs"
 
 [[bin]]
 path = "src/main.rs"
 name = "swordfish"
 
 [dependencies]
+anyhow = "1"
 clap = { version = "3", features = ["derive"] }
 colored = "2"
 serde = { version = "1", features = ["derive"] }
 serde_yaml = "0.9"
+shellwords = "1"
