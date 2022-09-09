@@ -9,5 +9,5 @@
 - !execute {line: ls -la}
 - !wait {msec: 3000}
 - !write {msec: 1000, color: green, text:  "$ "}
-- !write {msec: 20, text: bye, press any key...}
+- !write {msec: 20, text: "bye, press any key..."}
 - !pause

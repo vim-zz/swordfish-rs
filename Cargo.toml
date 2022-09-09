@@ -6,6 +6,7 @@ license-file = "LICENSE"
 description = "Cli tool for typing effect in Termainl for screencasts"
 readme = "README.md"
 repository = "https://github.com/vim-zz/swordfish/"
+exclude = ["/examples", "/tests", "*.gif"]
 
 [lib]
 name = "swordfishlib"

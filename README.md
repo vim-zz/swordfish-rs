@@ -2,7 +2,7 @@
 
 Cli tool for typing effect in Termainl for screencasts.
 
-![infamous_hugh_jackman_swordfish_hack_scene](infamous_hugh_jackman_swordfish_hack_scene.gif)
+![Swordfish hack scene](swordfish_hack_scene.gif)
 
 Example screenplay file:
 
@@ -21,6 +21,9 @@ Example screenplay file:
 - !write {msec: 20, text: "bye, press any key..."}
 - !pause
 ```
+
+![demo](demo.gif)
+
 
 ## Quick start
 
