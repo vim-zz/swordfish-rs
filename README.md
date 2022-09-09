@@ -2,7 +2,7 @@
 
 Cli tool for screen typing pre defined scripts.
 
-Example screen play:
+Example screenplay file:
 
 ```yaml
 - !write {msec: 0, color: green, text:  "$ "}
@@ -22,3 +22,15 @@ Example screen play:
 ## Quick start
 
 Install 
+
+```sh
+cargo install swordfish-rs
+```
+
+## Usage
+
+Create a screenplay file and run swordfish:
+
+```sh
+swordfish-rs path/to/file.yaml
+```
