@@ -1,10 +1,10 @@
-# swordfish-rs 
+# swordfish-rs
 
-Cli tool for typing effect in Termainl for screencasts and demos:
+Cli tool for typing effect in Terminal for screencasts and demos:
 
-1. 💬 Describe what you are doing 
-2. ⚡️ Run any terminal command and get their outputs to screen 
-3. 🤖 Reproducable steps - iterate on the `screenplay` file till perfection
+1. 💬 Describe what you are doing
+2. ⚡️ Run any terminal command and get their outputs to screen
+3. 🤖 Reproducible steps - iterate on the `screenplay` file till perfection
 4. 😎 Mimick real person behaviour with realtime typing into terminal
 
 ![Swordfish hack scene](swordfish_hack_scene.gif)
@@ -35,7 +35,7 @@ Running `swordfish screenplay.yaml`:
 
 ## Quick start
 
-Install 
+Install
 
 ```sh
 cargo install swordfish-rs
@@ -51,26 +51,26 @@ swordfish path/to/file.yaml
 
 ### Commands
 
-The follwoing comamnds are available:
+The following commands are available:
 
-#### Write 
+#### Write
 
-Write text to the terimal.
+Write text to the terminal.
 
 | Argument | Type | Description |
 | - | - | - |
-|`text`| String | the text to type in the terimal, each charecter will be entered on by one with some delay |
-|`msec`| Integer | delay between typed chars in milisec |
+|`text`| String | the text to type in the terminal, each charecter will be entered one by one with some delay |
+|`msec`| Integer | delay between typed chars in millisecs |
 |`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
-    
-#### Erase 
+
+#### Erase
 
 Erase charecters to the left.
 
 | Argument | Type | Description |
 | - | - | - |
-|`by_chars`| String | the amount of backspace is determind by the length of the provided text |
-|`msec`| Integer | delay between individual backspaces in milisec |
+|`by_chars`| String | the amount of backspace is determined by the length of the provided text |
+|`msec`| Integer | delay between individual backspaces in millisecs |
 
 #### Execute 
 
