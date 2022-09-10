@@ -12,7 +12,7 @@ pub fn from_yaml(data: &str) -> Result<Vec<Command>> {
     Ok(yaml)
 }
 
-const DELAY_AFTER_EXECUTE: u64 = 100;
+const DELAY_AFTER_EXECUTE: u64 = 250;
 
 pub fn execute(commands: Vec<Command>) -> Result<()> {
     let mut prompt = None;
