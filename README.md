@@ -49,31 +49,36 @@ The follwoing comamnds are available:
 
 Write text to the terimal.
 
-`text`: the text to type in the terimal, each charecter will be entered on by one with some delay
-`msec`: delay between typed chars in milisec
-`color` (optional): text's color 
-
-Availave colors: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white`.
-All colors has a brighter variant, for example `bright_red`.
+| Argument | Type | Description |
+| - | - | - |
+|`text`| String | the text to type in the terimal, each charecter will be entered on by one with some delay |
+|`msec`| Integer | delay between typed chars in milisec |
+|`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
     
 #### Erase 
 
 Erase charecters to the left.
 
-`by_chars`: the amount of backspace is determind by the length of the provided text 
-`msec`: delay between individual backspaces in milisec
+| Argument | Type | Description |
+| - | - | - |
+|`by_chars`| String | the amount of backspace is determind by the length of the provided text |
+|`msec`| Integer | delay between individual backspaces in milisec |
 
 #### Execute 
 
 Execute shell commands or other applications and show their output.
 
-`line`: command line to execute, respects quoted arguments
+| Argument | Type | Description |
+| - | - | - |
+|`line`| String | command line to execute, respects quoted arguments |
 
 The output is presented, while the executed command itself will not show.
 
 #### Wait 
 
-`msec`: delay before next command in milisec
+| Argument | Type | Description |
+| - | - | - |
+|`msec`| Integer |  delay before next command in milisec |
 
 #### Clear 
 
