@@ -1,8 +1,6 @@
 # swordfish-rs 
 
-Cli tool for typing effect in Termainl. 
-
-`sowrdfish` for screencasts and demos:
+Cli tool for typing effect in Termainl for screencasts and demos:
 
 1. 💬 Describe what you are doing 
 2. ⚡️ Run any terminal command and get their outputs to screen 
