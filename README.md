@@ -1,6 +1,9 @@
 # swordfish-rs 
 
-Cli tool for typing effect in Termainl for screencasts and demos:
+> **Cli tool for typing effect in Termainl for screencasts and demos**
+
+[![Crates.io](https://img.shields.io/crates/v/swordfish-rs)](https://crates.io/crates/swordfish-rs)
+[![Crates.io](https://img.shields.io/crates/d/swordfish-rs)](https://crates.io/crates/swordfish-rs)
 
 1. 💬 Describe what you are doing 
 2. ⚡️ Run any terminal command and get their outputs to screen 
