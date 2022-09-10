@@ -15,16 +15,15 @@ Example `screenplay.yaml` file:
 
 ```yaml
 - !clear
-- !write {msec: 0, color: green, text:  "$ "}
+- !prompt {text: "$", color: green}
 - !write {msec: 20, text:    "i am going to list this dir"}
 - !wait {msec: 1000}
-- !erase {msec: 20, by_chars: xxxxxxxxxxxxxxxxxxxxxxxxxxx }
+- !erase {msec: 20, amount: 100}
 - !wait {msec: 1000}
 - !write {msec: 20, text: ls}
 - !wait {msec: 1000}
 - !execute {line: ls -la}
 - !wait {msec: 3000}
-- !write {msec: 1000, color: green, text:  "$ "}
 - !write {msec: 20, text: "bye, press any key..."}
 - !pause
 ```
@@ -51,9 +50,9 @@ swordfish path/to/file.yaml
 
 ### Commands
 
-The follwoing comamnds are available:
+The follwoing comamnds are available, commands are witten with `!` before the command name, for example `!clear`.
 
-#### Write 
+#### `write` 
 
 Write text to the terimal.
 
@@ -63,16 +62,19 @@ Write text to the terimal.
 |`msec`| Integer | delay between typed chars in milisec |
 |`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
     
-#### Erase 
+#### `erase` 
 
 Erase charecters to the left.
 
 | Argument | Type | Description |
 | - | - | - |
-|`by_chars`| String | the amount of backspace is determind by the length of the provided text |
+|`amount` (optional)| String | the amount of backspaces |
+|`by_chars` (optional)| String | the amount of backspace is determind by the length of the provided text |
 |`msec`| Integer | delay between individual backspaces in milisec |
 
-#### Execute 
+Use either `amount` or `by_chars` or both.
+
+#### `execute` 
 
 Execute shell commands or other applications and show their output.
 
@@ -82,16 +84,25 @@ Execute shell commands or other applications and show their output.
 
 The output is presented, while the executed command itself will not show.
 
-#### Wait 
+#### `wait` 
 
 | Argument | Type | Description |
 | - | - | - |
 |`msec`| Integer |  delay before next command in milisec |
 
-#### Clear 
+#### `clear` 
 
 Clear screen command.
 
-#### Pause 
+#### `pause` 
 
 Pause before next command and wait for user input (any key...)
+
+#### `prompt`
+
+Prompt specify a constant text that is shown after every `execute` and cis not affected by `erase`.
+
+| Argument | Type | Description |
+| - | - | - |
+|`text`| String | the prompt text |
+|`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
