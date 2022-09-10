@@ -4,7 +4,9 @@ Cli tool for typing effect in Termainl for screencasts.
 
 ![Swordfish hack scene](swordfish_hack_scene.gif)
 
-Example screenplay file:
+## Demo
+
+Example `screenplay.yaml` file:
 
 ```yaml
 - !clear
@@ -22,8 +24,9 @@ Example screenplay file:
 - !pause
 ```
 
-![demo](demo.gif)
+Running `swordfish screenplay.yaml`:
 
+![demo](demo.gif)
 
 ## Quick start
 
