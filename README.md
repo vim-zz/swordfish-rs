@@ -54,7 +54,7 @@ swordfish path/to/file.yaml
 
 ### Commands
 
-The following comamnds are available, commands are witten with `!` before the command name, for example `!clear`.
+The following commands are available, commands are witten with `!` before the command name, for example `!clear`.
 
 #### `write` 
 
