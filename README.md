@@ -1,6 +1,9 @@
 # swordfish-rs
 
-Cli tool for typing effect in Terminal for screencasts and demos:
+> **Cli tool for typing effect in Terminal for screencasts and demos**
+
+[![Crates.io](https://img.shields.io/crates/v/swordfish-rs)](https://crates.io/crates/swordfish-rs)
+[![Crates.io](https://img.shields.io/crates/d/swordfish-rs)](https://crates.io/crates/swordfish-rs)
 
 1. 💬 Describe what you are doing
 2. ⚡️ Run any terminal command and get their outputs to screen
@@ -51,9 +54,9 @@ swordfish path/to/file.yaml
 
 ### Commands
 
-The following commands are available:
+The following comamnds are available, commands are witten with `!` before the command name, for example `!clear`.
 
-#### Write
+#### `write` 
 
 Write text to the terminal.
 
@@ -62,17 +65,20 @@ Write text to the terminal.
 |`text`| String | the text to type in the terminal, each charecter will be entered one by one with some delay |
 |`msec`| Integer | delay between typed chars in millisecs |
 |`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
-
-#### Erase
+    
+#### `erase` 
 
 Erase charecters to the left.
 
 | Argument | Type | Description |
 | - | - | - |
-|`by_chars`| String | the amount of backspace is determined by the length of the provided text |
+|`amount` (optional)| String | the amount of backspaces |
+|`by_chars` (optional)| String | the amount of backspace is determind by the length of the provided text |
 |`msec`| Integer | delay between individual backspaces in millisecs |
 
-#### Execute 
+Use either `amount` or `by_chars` or both.
+
+#### `execute` 
 
 Execute shell commands or other applications and show their output.
 
@@ -82,16 +88,25 @@ Execute shell commands or other applications and show their output.
 
 The output is presented, while the executed command itself will not show.
 
-#### Wait 
+#### `wait` 
 
 | Argument | Type | Description |
 | - | - | - |
-|`msec`| Integer |  delay before next command in milisec |
+|`msec`| Integer |  delay before next command in millisecs |
 
-#### Clear 
+#### `clear` 
 
 Clear screen command.
 
-#### Pause 
+#### `pause` 
 
 Pause before next command and wait for user input (any key...)
+
+#### `prompt`
+
+Prompt specify a constant text that is shown after every `execute` and cis not affected by `erase`.
+
+| Argument | Type | Description |
+| - | - | - |
+|`text`| String | the prompt text |
+|`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
