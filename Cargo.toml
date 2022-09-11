@@ -23,3 +23,8 @@ colored = "2"
 serde = { version = "1", features = ["derive"] }
 serde_yaml = "0.9"
 shellwords = "1"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
