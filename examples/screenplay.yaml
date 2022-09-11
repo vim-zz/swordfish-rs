@@ -1,6 +1,7 @@
 - !clear
 - !prompt {text: "$", color: green}
 - !write {msec: 20, text:    "i am going to list this dir"}
+- !new_line
 - !wait {msec: 1000}
 - !erase {msec: 20, amount: 100}
 - !wait {msec: 1000}

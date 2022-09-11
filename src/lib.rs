@@ -70,6 +70,11 @@ pub fn execute(commands: Vec<Command>) -> Result<()> {
                 show_prompt(&prompt)?;
                 cursor = 0;
             },
+            Command::NewLine => {
+                print!("\n");
+                show_prompt(&prompt)?;
+                cursor = 0;
+            }
         }
     }
 
