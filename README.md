@@ -8,7 +8,7 @@
 1. 💬 Describe what you are doing
 2. ⚡️ Run any terminal command and get their outputs to screen
 3. 🤖 Reproducible steps - iterate on the `screenplay` file till perfection
-4. 😎 Mimick real person behaviour with realtime typing into terminal
+4. 😎 Mimics real person behavior with realtime typing into terminal
 
 ![Swordfish hack scene](swordfish_hack_scene.gif)
 
@@ -54,7 +54,7 @@ swordfish path/to/file.yaml
 
 ### Commands
 
-The following commands are available, commands are witten with `!` before the command name, for example `!clear`.
+The following commands are available, written with `!` before the command name, for example `!clear`.
 
 #### `write` 
 
@@ -62,18 +62,18 @@ Write text to the terminal.
 
 | Argument | Type | Description |
 | - | - | - |
-|`text`| String | the text to type in the terminal, each charecter will be entered one by one with some delay |
+|`text`| String | the text to type in the terminal, each character will be entered one by one with some delay |
 |`msec`| Integer | delay between typed chars in millisecs |
 |`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
     
 #### `erase` 
 
-Erase charecters to the left.
+Erase characters to the left.
 
 | Argument | Type | Description |
 | - | - | - |
 |`amount` (optional)| String | the amount of backspaces |
-|`by_chars` (optional)| String | the amount of backspace is determind by the length of the provided text |
+|`by_chars` (optional)| String | the amount of backspace is determined by the length of the provided text |
 |`msec`| Integer | delay between individual backspaces in millisecs |
 
 Use either `amount` or `by_chars` or both.
