@@ -38,11 +38,13 @@ Running `swordfish screenplay.yaml`:
 
 ## Quick start
 
-Install
+Install:
 
 ```sh
 cargo install swordfish-rs
 ```
+
+Requires Rust on your machine, get it from [https://rustup.rs](https://rustup.rs)
 
 ## Usage
 
