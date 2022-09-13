@@ -1,6 +1,6 @@
 # swordfish-rs
 
-> **Cli tool for typing effect in Terminal for screencasts and demos**
+> **Typing effect cli tool for screencasts and demos**
 
 [![Crates.io](https://img.shields.io/crates/v/swordfish-rs)](https://crates.io/crates/swordfish-rs)
 [![Crates.io](https://img.shields.io/crates/d/swordfish-rs)](https://crates.io/crates/swordfish-rs)
