@@ -12,17 +12,18 @@ pub fn from_yaml(data: &str) -> Result<Vec<Command>> {
     Ok(yaml)
 }
 
-const DELAY_AFTER_EXECUTE: u64 = 250;
+const DELAY_AFTER_EXECUTE: u32 = 250;
 
 pub fn execute(commands: Vec<Command>) -> Result<()> {
     let mut prompt = None;
     let mut cursor = 0;
+    let mut speed_factor = 1;
 
     for cmd in commands {
         match cmd {
             Command::Write {msec, text, color} => {
                 for c in text.chars() { 
-                    thread::sleep(time::Duration::from_millis(msec.into()));
+                    delay(msec, speed_factor);
                     print!("{}", terminal::colorful(&c.to_string(), color));
                     stdout().flush()?;
                 }
@@ -39,7 +40,7 @@ pub fn execute(commands: Vec<Command>) -> Result<()> {
                 // Remove the deletions up till the cursor
                 let deletions = cmp::min(deletions, cursor);
                 cursor -= deletions;
-                erase(deletions, msec)?;
+                erase(deletions, msec, speed_factor)?;
             },
             Command::Execute {line} => {
                 println!("");
@@ -48,12 +49,12 @@ pub fn execute(commands: Vec<Command>) -> Result<()> {
                 if let Some((cmd, args)) = words.split_first() {
                     process::Command::new(cmd).args(args).spawn()?;
                 }
-                thread::sleep(time::Duration::from_millis(DELAY_AFTER_EXECUTE));
+                delay(DELAY_AFTER_EXECUTE, speed_factor);
                 show_prompt(&prompt)?;
                 cursor = 0;
             },
             Command::Wait {msec} => {
-                thread::sleep(time::Duration::from_millis(msec.into()));
+                delay(msec, speed_factor);
             },
             Command::Pause => {
                 let mut answer = String::new();
@@ -74,7 +75,10 @@ pub fn execute(commands: Vec<Command>) -> Result<()> {
                 print!("\n");
                 show_prompt(&prompt)?;
                 cursor = 0;
-            }
+            },
+            Command::Turbo {by} => {
+                speed_factor = by;
+            },
         }
     }
 
@@ -90,11 +94,16 @@ fn show_prompt(prompt: &Option<String>) -> Result<()> {
     Ok(())
 }
 
-fn erase(amount: usize, msec: u32) -> Result<()> {
+fn erase(amount: usize, msec: u32, speed_factor: u32) -> Result<()> {
     for _ in 0..amount { 
-        thread::sleep(time::Duration::from_millis(msec.into()));
+        delay(msec, speed_factor);
         print!("{} {}", BACKSPACE, BACKSPACE);
         stdout().flush()?;
     }
     Ok(())
+}
+
+fn delay(msec: u32, speed_factor: u32) {
+    let t = msec / speed_factor;
+    thread::sleep(time::Duration::from_millis(t.into()));
 }

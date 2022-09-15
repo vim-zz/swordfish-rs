@@ -1,4 +1,5 @@
 - !clear
+# - !turbo {by: 10}
 - !prompt {text: "$", color: green}
 - !write {msec: 20, text:    "i am going to list this dir"}
 - !new_line

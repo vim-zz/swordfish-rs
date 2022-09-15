@@ -11,4 +11,5 @@ pub enum Command<'a> {
     Prompt {text: &'a str, color: Option<&'a str>},
     Wait {msec: u32},
     Write {msec: u32, color: Option<&'a str>, text: &'a str},
+    Turbo {by: u32},
 }

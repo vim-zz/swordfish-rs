@@ -18,6 +18,7 @@ Example `screenplay.yaml` file:
 
 ```yaml
 - !clear
+# - !turbo {by: 3}
 - !write {msec: 0, color: green, text:  "$ "}
 - !write {msec: 20, text:    "i am going to list this dir"}
 - !wait {msec: 1000}
@@ -58,16 +59,10 @@ swordfish path/to/file.yaml
 
 The following commands are available, written with `!` before the command name, for example `!clear`.
 
-#### `write` 
+#### `clear` 
 
-Write text to the terminal.
+Clear screen command.
 
-| Argument | Type | Description |
-| - | - | - |
-|`text`| String | the text to type in the terminal, each character will be entered one by one with some delay |
-|`msec`| Integer | delay between typed chars in millisecs |
-|`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
-    
 #### `erase` 
 
 Erase characters to the left.
@@ -90,15 +85,9 @@ Execute shell commands or other applications and show their output.
 
 The output is presented, while the executed command itself will not show.
 
-#### `wait` 
+#### `new_line` 
 
-| Argument | Type | Description |
-| - | - | - |
-|`msec`| Integer |  delay before next command in millisecs |
-
-#### `clear` 
-
-Clear screen command.
+Simulate user's `ENTER`.
 
 #### `pause` 
 
@@ -113,6 +102,26 @@ Prompt specify a constant text that is shown after every `execute` and cis not a
 |`text`| String | the prompt text |
 |`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
 
-#### `new_line` 
+#### `turbo` 
 
-Simulate user's `ENTER`.
+Speed everything, useful when iterating over the screenplay.
+
+| Argument | Type | Description |
+| - | - | - |
+|`by`| Integer | Speed everything by this factor |
+    
+#### `wait` 
+
+| Argument | Type | Description |
+| - | - | - |
+|`msec`| Integer |  delay before next command in millisecs |
+
+#### `write` 
+
+Write text to the terminal.
+
+| Argument | Type | Description |
+| - | - | - |
+|`text`| String | the text to type in the terminal, each character will be entered one by one with some delay |
+|`msec`| Integer | delay between typed chars in millisecs |
+|`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
