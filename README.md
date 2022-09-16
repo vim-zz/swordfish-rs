@@ -4,6 +4,7 @@
 
 [![Crates.io](https://img.shields.io/crates/v/swordfish-rs)](https://crates.io/crates/swordfish-rs)
 [![Crates.io](https://img.shields.io/crates/d/swordfish-rs)](https://crates.io/crates/swordfish-rs)
+[![Release](https://github.com/vim-zz/swordfish-rs/actions/workflows/release.yml/badge.svg)](https://github.com/vim-zz/swordfish-rs/actions/workflows/release.yml)
 
 1. 💬 Describe what you are doing
 2. ⚡️ Run any terminal command and get their outputs to screen
