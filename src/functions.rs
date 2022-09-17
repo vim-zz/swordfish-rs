@@ -24,3 +24,8 @@ pub fn show_prompt(prompt: &Option<String>) -> Result<()> {
     }
     Ok(())
 }
+
+pub fn show_title(text: &str) -> Result<()> {
+    write!(stdout(), "\x1B]0;{text}\x07")?;
+    Ok(())
+}

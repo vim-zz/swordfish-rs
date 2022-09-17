@@ -1,0 +1,12 @@
+- !clear
+- !prompt {text: "$", color: green}
+- !write {msec: 20, text: "swordfish can set the terminal title, look up..."}
+- !wait {msec: 2000}
+- !new_line
+- !title {text: "swordfish demo"}
+- !write {msec: 20, text: "nice!"}
+- !wait {msec: 2000}
+- !erase {msec: 20, amount: 100}
+- !wait {msec: 1000}
+- !write {msec: 20, text: "super nice!"}
+- !wait {msec: 3000}

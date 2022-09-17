@@ -4,6 +4,7 @@ use swordfishlib;
 fn play_commands() {
     let screenplay = r###"
     - !clear
+    - !title {text: "title here"}
     - !prompt {color: bright_green, text:  "$"}
     - !write {msec: 0, color: blue, text:  "$ "}
     - !write {msec: 0, text:    "i am going to list this dir"}

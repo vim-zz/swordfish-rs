@@ -18,6 +18,8 @@ pub enum Command<'a> {
     Pause(Pause),
     #[serde(borrow)]
     Prompt(Prompt<'a>),
+    #[serde(borrow)]
+    Title(Title<'a>),
     Turbo(Turbo),
     Wait(Wait),
     #[serde(borrow)]
@@ -132,6 +134,20 @@ impl Runnable for Prompt<'_> {
         state.prompt = Some(ps1);
         functions::show_prompt(&state.prompt)?;
         state.cursor = 0;
+        Ok(())
+    }
+}
+
+/// `!title`
+/// Title specify a constant text that is shown after every `execute` and cis not affected by `erase`.
+#[derive(Debug, Deserialize)]
+pub struct Title<'a> {
+    pub text: &'a str, 
+}
+
+impl Runnable for Title<'_> {
+    fn run(&self, _state: &mut State) -> Result<()> {
+        functions::show_title(self.text)?;
         Ok(())
     }
 }
