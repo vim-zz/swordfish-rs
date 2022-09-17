@@ -102,6 +102,14 @@ Prompt specify a constant text that is shown after every `execute` and cis not a
 |`text`| String | the prompt text |
 |`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
 
+#### `title` 
+
+Sets the terminal window title.
+
+| Argument | Type | Description |
+| - | - | - |
+|`text`| String | the text to use for the terminal window title |
+
 #### `turbo` 
 
 Speed everything, useful when iterating over the screenplay.
