@@ -1,6 +1,6 @@
 [package]
 name = "swordfish-rs"
-version = "0.5.0"
+version = "0.5.1"
 edition = "2021"
 license-file = "LICENSE"
 description = "Cli tool for typing effect in Termainl for screencasts"
@@ -20,6 +20,7 @@ name = "swordfish"
 anyhow = "1"
 clap = { version = "3", features = ["derive"] }
 colored = "2"
+enum_dispatch = "0.3"
 serde = { version = "1", features = ["derive"] }
 serde_yaml = "0.9"
 shellwords = "1"
@@ -28,3 +29,4 @@ shellwords = "1"
 strip = true
 lto = true
 codegen-units = 1
+opt-level = "z"  # Optimize for size.

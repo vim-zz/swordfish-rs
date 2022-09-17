@@ -4,7 +4,7 @@ use swordfishlib;
 fn play_commands() {
     let screenplay = r###"
     - !clear
-    - !prompt {color: green, text:  "$"}
+    - !prompt {color: bright_green, text:  "$"}
     - !write {msec: 0, color: blue, text:  "$ "}
     - !write {msec: 0, text:    "i am going to list this dir"}
     - !wait {msec: 0}
@@ -16,9 +16,31 @@ fn play_commands() {
     - !wait {msec: 0}
     - !new_line
     - !write {msec: 0, text: "bye, press any key..."}
+    - !turbo {by: 1}
     "###;
 
     let commands = swordfishlib::from_yaml(&screenplay).unwrap();
-    assert_eq!(commands.len(), 13);
+    let lines = screenplay.lines().collect::<Vec<_>>().len();
+    assert_eq!(commands.len(), lines - 2);
     swordfishlib::execute(commands).unwrap();
+}
+
+#[test]
+fn play_wrong_commands() {
+    let screenplay = r###"
+    - !no_command_like_this_one
+    "###;
+
+    let commands = swordfishlib::from_yaml(&screenplay);
+    assert!(commands.is_err());
+}
+
+#[test]
+fn play_wrong_command_arg() {
+    let screenplay = r###"
+    - !wait {no_arg_like_this_one: 0}
+    "###;
+
+    let commands = swordfishlib::from_yaml(&screenplay);
+    assert!(commands.is_err());
 }
