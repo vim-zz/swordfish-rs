@@ -112,6 +112,8 @@ Speed everything, useful when iterating over the screenplay.
     
 #### `wait` 
 
+Pauses execution for the specified time, then contrinues.
+
 | Argument | Type | Description |
 | - | - | - |
 |`msec`| Integer |  delay before next command in millisecs |
