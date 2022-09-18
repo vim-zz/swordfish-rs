@@ -39,23 +39,39 @@ Running `swordfish screenplay.yaml`:
 
 ## Quick start
 
-Install:
+1. Install: 
 
-```sh
-cargo install swordfish-rs
 ```
+cargo install swordfish-rs
+```` 
 
 Requires Rust on your machine, get it from [https://rustup.rs](https://rustup.rs)
 
-## Usage
+or [download a binary](https://github.com/vim-zz/swordfish-rs/releases)
 
-Create a screenplay file and run swordfish:
+2. Create this getting started screenplay file as `getting_started.yaml`:
 
-```sh
-swordfish path/to/file.yaml
+```yaml
+- !clear
+- !prompt {color: green, text:  "$"}
+- !write {msec: 20, text: "swordfish reads screenplay files, in yaml format"}
+- !wait {msec: 2000}
+- !erase {msec: 20, amount: 1000 }
+- !wait {msec: 1000}
+- !write {msec: 20, text: "it contains a list of commands, each command can have parameters that control it"}
+- !wait {msec: 2000}
+- !new_line
+- !write {msec: 20, text: "that's it"}
+- !new_line
 ```
 
-### Commands
+3. Run swordfish
+
+```
+swordfish getting_started.yaml
+```
+
+## Commands
 
 The following commands are available, written with `!` before the command name, for example `!clear`.
 
