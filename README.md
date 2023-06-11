@@ -151,3 +151,4 @@ Write text to the terminal.
 |`text`| String | the text to type in the terminal, each character will be entered one by one with some delay |
 |`msec`| Integer | delay between typed chars in millisecs |
 |`color` (optional)| String | text's color: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white` or a brighter variant, for example `bright_red` |
+
