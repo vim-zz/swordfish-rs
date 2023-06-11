@@ -41,4 +41,4 @@ calc:
   etr: {{ branch | estimatedReviewTime }}
 
 is:
-  docs: {{ files | match(regex=r/(\.md|\.MD|mkdocs\.yml)$/ | every }}
+  docs: {{ files | match(regex=r/(\.md|\.MD|mkdocs\.yml)$/) | every }}
